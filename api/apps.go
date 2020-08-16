@@ -6,7 +6,7 @@ import (
 	"net/url"
 )
 
-func Handler(w http.ResponseWriter, r *http.Request) {
+func Handler(res http.ResponseWriter, req *http.Request) {
     url, _ := url.Parse("http://pmiappserverprod-env.eba-i3hnze8t.us-east-2.elasticbeanstalk.com/")
     httputil.NewSingleHostReverseProxy(url).ServeHTTP(res, req)
 }
